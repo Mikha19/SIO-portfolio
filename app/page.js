@@ -1,9 +1,8 @@
-import Image from "next/image";
-
 export default function Home() {
-  return (
-    <div className="bg-amber-400">
-      
-    </div>
-  );
+    return (
+        <div className="bg-amber-400 text-4xl">
+            Ce site est en développement. <br />
+            Merci de votre compréhension.
+        </div>
+    );
 }
