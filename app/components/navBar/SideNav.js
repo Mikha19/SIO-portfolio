@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import NavLinks from './Links.js';
+import NavLinks from './Links';
 
 export default function SideNav() {
   return (
