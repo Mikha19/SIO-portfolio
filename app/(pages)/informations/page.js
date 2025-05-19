@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Modal from '@/app/components/Informations/Modal';
-import Card from '@/app/components/Informations/informationCard';
-import { cards } from '@/app/components/data/Card';
+import Modal from '@/app/components/informations/Modal';
+import Card from '@/app/components/informations/informationCard';
+import { cards } from '@/app/components/data/infoCardData';
 
 export default function Home() {
     const [selectedCard, setSelectedCard] = useState(null);
