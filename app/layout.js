@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import SideNav from "./components/SideNav";
-import "./styles/output.css";
+import SideNav from "./components/navBar/SideNav";
+import "@/public/styles/output.css";
 
 export default function RootLayout({ children }) {
   return (
@@ -11,7 +11,6 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Portfolio de Alexandre Mikhael" />
         <link rel="icon" href="/favicon.ico" />
         <title>Portfolio | ALEXANDRE Mikhael</title>
-        <link rel="stylesheet" href="/styles/output.css" />
       </head>
       <body className="min-h-full flex">
         <div className="flex flex-row w-full">
