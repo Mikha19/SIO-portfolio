@@ -16,7 +16,7 @@ export const competences = [
 </div>`
     },
     { id: 2, title: "CSS", image: "/images/competences/css.png", progress: 90,
-        codeExample: `/*Code CSS pour les bordures et un fond noir broullier */
+        codeExample: `/*Code CSS pour les bordures et un fond noir broullié */
 .rounded-md {
   border-radius: 0.375rem;
 }

@@ -3,7 +3,7 @@ export const cards = [
         id: 1,
         title: "Moi",
         image: "/self.png",
-        description: "Jeune apprenti en BTS Service Informatique aux Organistations, option Solutions Logicielles et Applications Métiers.",
+        description: "Jeune apprenti en BTS Service Informatique aux Organisations, option Solutions Logicielles et Applications Métiers.",
         text: "Je suis passionné par le développement informatique, et je m'efforce d'apprendre chaque jour pour réaliser mon but qui est de crée des jeux vidéos.",
         imageClass: "rounded-full"
     },
