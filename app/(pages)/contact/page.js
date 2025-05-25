@@ -5,7 +5,6 @@ export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        subject: '',
         message: ''
     });
     const [status, setStatus] = useState('');
@@ -25,7 +24,7 @@ export default function Contact() {
 
             if (response.ok) {
                 setStatus('success');
-                setFormData({ name: '', email: '', subject: '', message: '' });
+                setFormData({ name: '', email: '', message: '' });
             } else {
                 setStatus('error');
             }

@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Modal from '@/app/components/Informations/Modal';
 import Card from '@/app/components/Informations/informationCard';
+import { useState } from 'react';
 import { informations } from '@/app/components/data/infoCardData';
 
 export default function Home() {
