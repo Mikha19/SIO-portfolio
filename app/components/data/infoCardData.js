@@ -1,4 +1,4 @@
-export const cards = [
+export const informations = [
     {
         id: 1,
         title: "Moi",

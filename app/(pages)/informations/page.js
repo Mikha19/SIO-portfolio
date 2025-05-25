@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Modal from '@/app/components/informations/Modal';
-import Card from '@/app/components/informations/informationCard';
-import { cards } from '@/app/components/data/infoCardData';
+import Modal from '@/app/components/Informations/Modal';
+import Card from '@/app/components/Informations/informationCard';
+import { informations } from '@/app/components/data/infoCardData';
 
 export default function Home() {
     const [selectedCard, setSelectedCard] = useState(null);
@@ -14,13 +14,13 @@ export default function Home() {
             <div className="max-w-6xl mx-auto mt-16 space-y-8">
                 {/* Top card */}
                 <div className="flex justify-center">
-                    <Card card={cards[0]} onClick={() => setSelectedCard(cards[0])} />
+                    <Card card={informations[0]} onClick={() => setSelectedCard(informations[0])} />
                 </div>
                 
-                {/* Bottom two cards */}
+                {/* Bottom two informations */}
                 <div className="flex flex-col gap-8">
-                    <Card card={cards[1]} onClick={() => setSelectedCard(cards[1])} />
-                    <Card card={cards[2]} onClick={() => setSelectedCard(cards[2])} />
+                    <Card card={informations[1]} onClick={() => setSelectedCard(informations[1])} />
+                    <Card card={informations[2]} onClick={() => setSelectedCard(informations[2])} />
                 </div>
             </div>
 
