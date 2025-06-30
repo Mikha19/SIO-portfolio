@@ -11,7 +11,7 @@ const links = [
   { name: 'Compétences', href: '/competences', },
   { name: 'Projets', href: '/projets', },
   { name: 'Veille Informatique', href: '/veille', },
-  { name: 'Fiches E6 et E7', href: '/fiches', },
+  { name: 'Fiches E5 et E6', href: '/fiches', },
   { name: 'Contact', href: '/contact', },
 ];
 
