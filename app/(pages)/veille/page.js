@@ -1,6 +1,19 @@
+'use client';
+
 import { veilleItems } from '@/app/components/data/veilleCardData';
+import { motion } from 'framer-motion';
 
 export default function Home() {
+    // Animation variants for veille cards
+    const cardVariants = {
+        hidden: { opacity: 0, x: -80 },
+        visible: (i) => ({
+            opacity: 1,
+            x: 0,
+            transition: { delay: i * 0.12, type: "spring", stiffness: 80 }
+        }),
+    };
+
     return (
         <div className="min-h-screen bg-white p-8">
             <div className="max-w-7xl mx-auto">
@@ -11,33 +24,37 @@ export default function Home() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {veilleItems.map((item, index) => (
-                        <div 
-                            key={index} 
-                            className="border-2 border-red-600 rounded-lg overflow-hidden"
+                        <motion.div 
+                            key={index}
+                            custom={index}
+                            initial="hidden"
+                            animate="visible"
+                            variants={cardVariants}
                         >
-                            <div className="w-full h-48 flex items-center justify-center bg-white">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="max-h-40 max-w-full object-contain"
-                                />
-                            </div>
-                            <div className="p-6">
-                                <div className="relative inline-block mb-4">
-                                    <h2 className="text-2xl font-bold">{item.title}</h2>
-                                    <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-red-600"></div>
+                            <div className="border-2 border-red-600 rounded-lg overflow-hidden">
+                                <div className="w-full h-48 flex items-center justify-center bg-white">
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="max-h-40 max-w-full object-contain"
+                                    />
                                 </div>
-                                <p className="text-gray-600 mb-4">{item.description}</p>
-                                <div className="text-sm text-gray-500">
-                                    <p className="font-semibold mb-1">Sources :</p>
-                                    <ul className="list-disc list-inside">
-                                        <a href={item.source} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-                                          {item.source}
-                                        </a>
-                                    </ul>
+                                <div className="p-6">
+                                    <div className="relative inline-block mb-4">
+                                        <h2 className="text-2xl font-bold">{item.title}</h2>
+                                        <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-red-600"></div>
+                                    </div>
+                                    <p className="text-gray-600 mb-4">{item.description}</p>
+                                    <div className="text-sm text-gray-500">
+                                        <ul className="list-disc list-inside">
+                                            <a href={item.source} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                                              {item.source}
+                                            </a>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

@@ -6,6 +6,7 @@ import Modal from '@/app/components/competences/Modal';
 import { competences } from '@/app/components/data/compCardData';
 import Image from 'next/image';
 import Code from '@/app/components/competences/code';
+import { motion } from 'framer-motion';
 
 export default function Home() {
     const [selectedCard, setSelectedCard] = useState(null);
@@ -46,15 +47,32 @@ export default function Home() {
         }
     }, [selectedCard]);
 
+    // Animation variants for cards
+    const cardVariants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: { delay: i * 0.12, type: "spring", stiffness: 80 }
+        }),
+    };
+
     return (
         <div className="min-h-screen bg-white p-16">
             <div className="grid grid-cols-3 gap-16 max-w-7xl mx-auto">
-                {competences.map((item) => (
-                    <CompetenceCard 
+                {competences.map((item, i) => (
+                    <motion.div
                         key={item.id}
-                        {...item}
-                        onClick={() => setSelectedCard(item)}
-                    />
+                        custom={i}
+                        initial="hidden"
+                        animate="visible"
+                        variants={cardVariants}
+                    >
+                        <CompetenceCard 
+                            {...item}
+                            onClick={() => setSelectedCard(item)}
+                        />
+                    </motion.div>
                 ))}
             </div>
 
