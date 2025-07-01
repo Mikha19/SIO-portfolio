@@ -4,7 +4,7 @@ export const informations = [
         title: "Moi",
         image: "/images/informations/self.png",
         description: "Jeune apprenti en BTS Service Informatique aux Organisations, option Solutions Logicielles et Applications Métiers.",
-        text: "Je suis passionné par le développement informatique, et je m'efforce d'apprendre chaque jour pour réaliser mon but qui est de crée des jeux vidéos.",
+        text: "Je suis passionné par le développement informatique, et je m'efforce d'apprendre chaque jour pour réaliser mon but qui est de crée des jeux vidéos. Je travaille actuellement en alternance dans une startup innovante, où je mets en pratique mes compétences en programmation pour réaliser mes objectifs.",
         imageClass: "rounded-full"
     },
     {
