@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 
-const subtitleText = "Bienvenu sur mon site";
+const subtitleText = "Bienvenue sur mon site";
 const nameText = "Je m'appelle Alexandre Mikhael";
 
 export default function Home() {

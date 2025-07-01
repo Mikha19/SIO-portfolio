@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Contact() {
     const [displayedTitle, setDisplayedTitle] = useState('');
@@ -10,9 +11,11 @@ export default function Contact() {
         message: ''
     });
     const [status, setStatus] = useState('');
+    const [displayedSecondSubtitle, setDisplayedSecondSubtitle] = useState('');
 
     const titleText = "Besoin de me contacter ?";
     const subtitleText = "Remplissez le formulaire suivant pour que l'on se donne rendez-vous !";
+    const secondSubtitleText = "Ou contactez-moi directement sur Linkedin.";
 
     useEffect(() => {
         let i = 0;
@@ -37,6 +40,21 @@ export default function Contact() {
             return () => clearTimeout(subtitleTimeout);
         }
     }, [displayedTitle]);
+
+    // Typing animation for the second subtitle after the first subtitle finishes
+    useEffect(() => {
+        if (displayedSubtitle === subtitleText) {
+            let k = 0;
+            const secondSubtitleTimeout = setTimeout(() => {
+                const secondSubtitleInterval = setInterval(() => {
+                    setDisplayedSecondSubtitle(secondSubtitleText.slice(0, k + 1));
+                    k++;
+                    if (k === secondSubtitleText.length) clearInterval(secondSubtitleInterval);
+                }, 30);
+            }, 600); // delay after first subtitle finishes
+            return () => clearTimeout(secondSubtitleTimeout);
+        }
+    }, [displayedSubtitle]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -86,7 +104,14 @@ export default function Contact() {
                             </span>
                         </p>
                         <div className="mt-8">
-                            {/* Add additional contact information if needed */}
+                            <p className="text-lg text-gray-600 min-h-[32px]">
+                                <span>
+                                    {displayedSecondSubtitle}
+                                    <span className="animate-pulse text-red-600">
+                                        {displayedSubtitle === subtitleText && displayedSecondSubtitle.length < secondSubtitleText.length ? '|' : ''}
+                                    </span>
+                                </span>
+                            </p>
                         </div>
                     </div>
 
@@ -106,7 +131,7 @@ export default function Contact() {
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Adresse Email</label>
+                                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Adresse e-mail</label>
                                 <input
                                     type="email"
                                     id="email"
@@ -138,7 +163,7 @@ export default function Contact() {
                             </button>
 
                             {status === 'success' && (
-                                <p className="text-green-600 text-center">Message envoyé avec succès!</p>
+                                <p className="text-green-600 text-center">Message envoyé avec succès !</p>
                             )}
                             {status === 'error' && (
                                 <p className="text-red-600 text-center">Une erreur est survenue. Veuillez réessayer.</p>
