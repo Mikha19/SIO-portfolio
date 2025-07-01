@@ -106,7 +106,7 @@ export default function Home() {
                                 Niveau de maîtrise: {Math.round(currentProgress)}%
                             </p>
                         </div>
-                        <div className="w-full max-w-md">
+                        <div className="w-full">
                             <Code language={selectedCard.title.toLowerCase()}>
                                 {selectedCard.codeExample}
                             </Code>
