@@ -15,11 +15,11 @@ export default function Home() {
                             key={index} 
                             className="border-2 border-red-600 rounded-lg overflow-hidden"
                         >
-                            <div className="w-full h-48 relative">
+                            <div className="w-full h-48 flex items-center justify-center bg-white">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover"
+                                    className="max-h-40 max-w-full object-contain"
                                 />
                             </div>
                             <div className="p-6">
@@ -31,9 +31,9 @@ export default function Home() {
                                 <div className="text-sm text-gray-500">
                                     <p className="font-semibold mb-1">Sources :</p>
                                     <ul className="list-disc list-inside">
-                                        {item.sources.map((source, idx) => (
-                                            <li key={idx}>{source}</li>
-                                        ))}
+                                        <a href={item.source} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                                          {item.source}
+                                        </a>
                                     </ul>
                                 </div>
                             </div>
