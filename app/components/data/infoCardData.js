@@ -20,7 +20,7 @@ export const informations = [
         title: "Centre de formation",
         image: "/images/informations/campusErmitage.png",
         description: "Le Campus ERMITAGE, centre de formation proposant des formations allant du BAC+2 au BAC+3, grâce à l'alternance.",
-        text: "Le Campus ERMITAGE est un ",
+        text: "Le Campus Ermitage Sup’, situé à Agen (Lot-et-Garonne), est un établissement d’enseignement supérieur privé qui propose des formations post-bac en initial ou en alternance. Il fait partie du réseau CNEAP et est relié au lycée agricole privé l’Ermitage. Le campus propose des formations allant du BAC+2 au BAC+3 dans divers domaines tels que le commerce, le marketing, la gestion, l’informatique et les ressources humaines.",
         imageClass: "rounded-full"
     }
 ];
