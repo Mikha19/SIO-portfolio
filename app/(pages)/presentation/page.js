@@ -23,19 +23,7 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-white p-8">
             <div className="max-w-6xl mx-auto mt-16 space-y-8">
-                {/* Top card */}
-                {/* <div className="flex justify-center">
-                    <motion.div
-                        custom={0}
-                        initial="hidden"
-                        animate="visible"
-                        variants={cardVariants}
-                    >
-                        <Card card={presentations[0]} onClick={() => setSelectedCard(presentations[0])} />
-                    </motion.div>
-                </div> */}
-                
-                {/* Bottom two presentations */}
+                {/* Présentations */}
                 <div className="flex flex-col gap-8">
                     {[0, 1, 2].map((idx, i) => (
                         <motion.div
