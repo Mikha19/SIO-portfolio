@@ -1,4 +1,4 @@
-export const informations = [
+export const presentations = [
     {
         id: 1,
         title: "Moi",

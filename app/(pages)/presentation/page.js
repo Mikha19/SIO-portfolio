@@ -1,10 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import Modal from '@/app/components/Informations/Modal';
-import Card from '@/app/components/Informations/informationCard';
+import Modal from '@/app/components/Presentation/Modal';
+import Card from '@/app/components/Presentation/presentationCard';
 import { useState } from 'react';
-import { informations } from '@/app/components/data/infoCardData';
+import { presentations } from '@/app/components/data/presCardData';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -31,21 +31,21 @@ export default function Home() {
                         animate="visible"
                         variants={cardVariants}
                     >
-                        <Card card={informations[0]} onClick={() => setSelectedCard(informations[0])} />
+                        <Card card={presentations[0]} onClick={() => setSelectedCard(presentations[0])} />
                     </motion.div>
                 </div>
                 
-                {/* Bottom two informations */}
+                {/* Bottom two presentations */}
                 <div className="flex flex-col gap-8">
                     {[1, 2].map((idx, i) => (
                         <motion.div
-                            key={informations[idx].title}
+                            key={presentations[idx].title}
                             custom={i + 1}
                             initial="hidden"
                             animate="visible"
                             variants={cardVariants}
                         >
-                            <Card card={informations[idx]} onClick={() => setSelectedCard(informations[idx])} />
+                            <Card card={presentations[idx]} onClick={() => setSelectedCard(presentations[idx])} />
                         </motion.div>
                     ))}
                 </div>
