@@ -42,18 +42,30 @@ export default function Home() {
             {/* Modal */}
             <Modal isOpen={selectedCard !== null} onClose={() => setSelectedCard(null)}>
                 {selectedCard && (
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-4">
-                            <Image 
-                                src={selectedCard.image} 
-                                alt={`${selectedCard.title} icon`}
-                                width={80}
-                                height={80}
-                                className={selectedCard.imageClass}
-                            />
-                            <h2 className="text-3xl font-bold">{selectedCard.title}</h2>
+                    <div className="w-full max-w-3xl">
+                        {/* Header: circular image + title */}
+                        <div className="flex items-center gap-6">
+                            <div className="w-20 h-20 flex-shrink-0">
+                                <Image
+                                    src={selectedCard.image}
+                                    alt={`${selectedCard.title} icon`}
+                                    width={80}
+                                    height={80}
+                                    className={`${selectedCard.imageClass} rounded-full object-cover`}
+                                />
+                            </div>
+                            <h2 className="text-3xl p-8 font-bold">{selectedCard.title}</h2>
                         </div>
-                        <p className="text-lg text-gray-800">{selectedCard.text}</p>
+
+                        {/* Red divider */}
+                        <div className="mt-6">
+                            <div className="h-1 bg-red-500 rounded w-full" />
+                        </div>
+
+                        {/* Body text */}
+                        <p className="mt-6 text-lg text-gray-700 leading-relaxed">
+                            {selectedCard.text}
+                        </p>
                     </div>
                 )}
             </Modal>
