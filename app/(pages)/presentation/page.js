@@ -53,7 +53,7 @@ export default function Home() {
                             />
                             <h2 className="text-3xl font-bold">{selectedCard.title}</h2>
                         </div>
-                        <p className="text-lg text-gray-500">{selectedCard.text}</p>
+                        <p className="text-lg text-gray-800">{selectedCard.text}</p>
                     </div>
                 )}
             </Modal>

@@ -21,7 +21,7 @@ export default function Card({ card, onClick }) {
                 onClick={onClick}
             >
                 <h2 className="text-2xl font-bold mb-2">{card.title}</h2>
-                <p className="text-gray-600">{card.description}</p>
+                <p className="text-gray-800">{card.description}</p>
             </div>
         </div>
     );
