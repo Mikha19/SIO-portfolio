@@ -7,7 +7,7 @@ import clsx from 'clsx';
 // Map of links to display in the side navigation.
 const links = [
   { name: 'Accueil', href: '/', },
-  { name: 'Informations', href: '/informations', },
+  { name: 'Présentation', href: '/presentation', },
   { name: 'Compétences', href: '/competences', },
   { name: 'Projets', href: '/projets', },
   { name: 'Veille Informatique', href: '/veille', },
