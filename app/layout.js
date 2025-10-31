@@ -13,8 +13,8 @@ export default function RootLayout({ children }) {
         <title>Portfolio | ALEXANDRE Mikhael</title>
       </head>
       <body className="min-h-full flex relative">
-        <div className="flex flex-row w-full">
-          <aside className="sticky top-0 z-50 h-screen">
+        <div className="flex flex-col md:flex-row w-full">
+          <aside className="sticky top-0 z-50 w-full md:w-auto md:h-screen">
             <SideNav />
           </aside>
           <main className="flex-grow p-4">{children}</main>
