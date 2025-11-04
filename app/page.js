@@ -35,7 +35,7 @@ export default function Home() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-center relative mb-6">
+            <h1 className="text-2xl md:text-4xl lg:text-6xl font-extrabold text-center relative mb-6">
                 <span className="relative z-10">
                     {displayedSubtitle}
                     <span
@@ -47,7 +47,7 @@ export default function Home() {
                     </span>
                 </span>
             </h1>
-            <div className="text-xl md:text-2xl text-gray-700 h-8">
+            <div className="text-lg md:text-2xl text-gray-700 h-8">
                 <span>
                     {displayedName}
                     <span className="animate-pulse text-red-600">
