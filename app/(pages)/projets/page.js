@@ -18,7 +18,7 @@ export default function Home() {
                                     src={project.image}
                                     alt={project.title}
                                     fill
-                                    className="object-cover"
+                                    className="object-contain"
                                 />
                             </div>
                             <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
