@@ -15,7 +15,7 @@ export const competences = [
     </pre>
 </div>`
     },
-    { id: 2, title: "CSS", image: "/images/competences/css.png", progress: 75,
+    { id: 2, title: "CSS", image: "/images/competences/css.png", progress: 70,
         codeExample: `/*Code CSS pour les bordures et un fond noir broullié */
 .rounded-md {
   border-radius: 0.375rem;
@@ -33,7 +33,7 @@ export const competences = [
 .bg-black\/50 {
   background-color: rgb(0 0 0 / 0.5);
 }`},
-    { id: 3, title: "JavaScript", image: "/images/competences/javascript.png", progress: 65,
+    { id: 3, title: "JavaScript", image: "/images/competences/javascript.png", progress: 60,
         codeExample: `const tableViewBtn = document.getElementById('table-view-btn');
     const kanbanViewBtn = document.getElementById('kanban-view-btn');
     const tableView = document.getElementById('table-view');
@@ -68,7 +68,7 @@ export const competences = [
     } else {
         console.error('One or more view toggle elements not found');
     }`},
-    { id: 4, title: "Node.JS", image: "/images/competences/nodejs.png", progress: 75,
+    { id: 4, title: "Node.JS", image: "/images/competences/nodejs.png", progress: 70,
         codeExample: `// Création d'un serveur HTTP avec Node.js
 const http = require('http');
 
@@ -85,7 +85,7 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
     console.log("Serveur démarré sur http://localhost:3000");
 });`},
-    { id: 5, title: "PHP", image: "/images/competences/php.png", progress: 35,
+    { id: 5, title: "PHP", image: "/images/competences/php.png", progress: 30,
         codeExample: `<?php
 // Configuration de la base de données
 $host = 'localhost';
@@ -106,7 +106,7 @@ try {
     $erreur = "Erreur de connexion : " . $e->getMessage();
 }
 ?>`},
-    { id: 6, title: "MySQL", image: "/images/competences/mysql.png", progress: 65,
+    { id: 6, title: "MySQL", image: "/images/competences/mysql.png", progress: 70,
         codeExample: `-- Création de la base de données
 CREATE DATABASE collectus;
 
