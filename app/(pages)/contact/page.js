@@ -36,7 +36,7 @@ export default function Contact() {
                     j++;
                     if (j === subtitleText.length) clearInterval(subtitleInterval);
                 }, 30);
-            }, 600); // delay after title finishes
+            }, 600);
             return () => clearTimeout(subtitleTimeout);
         }
     }, [displayedTitle]);
@@ -51,7 +51,7 @@ export default function Contact() {
                     k++;
                     if (k === secondSubtitleText.length) clearInterval(secondSubtitleInterval);
                 }, 30);
-            }, 600); // delay after first subtitle finishes
+            }, 600);
             return () => clearTimeout(secondSubtitleTimeout);
         }
     }, [displayedSubtitle]);

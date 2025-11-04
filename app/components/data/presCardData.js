@@ -3,7 +3,7 @@ export const presentations = [
         id: 1,
         title: "Moi",
         image: "/images/presentation/self.png",
-        description: "Jeune apprenti en BTS Service Informatique aux Organisations, option Solutions Logicielles et Applications Métiers.",
+        description: "Apprenti en BTS Service Informatique aux Organisations, option Solutions Logicielles et Applications Métiers.",
         text: "Je suis passionné par le développement informatique, et je m'efforce d'apprendre chaque jour pour réaliser mon but qui est de crée des jeux vidéos. Je travaille actuellement en alternance dans une startup innovante, où je mets en pratique mes compétences en programmation pour réaliser mes objectifs.",
         imageClass: "rounded-full"
     },
