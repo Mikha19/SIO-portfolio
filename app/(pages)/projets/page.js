@@ -5,7 +5,6 @@ import Image from 'next/image';
 export default function Home() {
     return (
         <div className="bg-white">
-            {/* Each project is a full-screen section so the page scrolls vertically through them */}
             {projects.map((project, idx) => (
                 <section
                     key={project.title + idx}
@@ -13,7 +12,7 @@ export default function Home() {
                 >
                     <div className="w-full max-w-6xl border-2 border-red-600 rounded-lg overflow-hidden shadow-md">
                         <div className="flex flex-col md:flex-row">
-                            <div className="w-full md:w-1/2 relative h-[60vh] md:h-[60vh]">
+                            <div className="w-full md:w-1/2 relative h-[30vh] lg:h-[30vh]">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
