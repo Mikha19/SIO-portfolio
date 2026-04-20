@@ -14,7 +14,7 @@ export const presentations = [
         description: "Owlcub, une plateforme centralisée pour surveiller, anticiper et protéger, avec une multitude d'intégrations.",
         text: "Owlcub est une startup innovante qui propose une solution de cybersécurité unique basée sur l'IA. Elle permet de surveiller, anticiper et protéger les entreprises contre les menaces informatiques. Grâce à une multitude d'intégrations, elle centralise toutes les alertes de sécurité en un seul endroit, facilitant ainsi la gestion des incidents.",
         imageClass: "rounded-lg",
-        link: "https://owlcub.com"
+        link: "https://www.owlcub.com"
     },
     {
         id: 3,
