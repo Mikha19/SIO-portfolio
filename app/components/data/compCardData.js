@@ -163,4 +163,87 @@ INSERT INTO encombrants (nom, prenom, telephone, email, adresse_postale, type_en
 
         SaveManager.Instance.SetHasActiveWaypoints(true);
     }`},
+    { id: 9, title: "Java", image: "/images/competences/java.png", progress: 25,
+        codeExample: `class Navire {
+    private String nom;
+    private int taille;
+    private int[] positionsX;
+    private int[] positionsY;
+    private boolean[] touches;
+    private boolean horizontal;
+
+    public Navire(String nom, int taille) {
+        this.nom = nom;
+        this.taille = taille;
+        this.positionsX = new int[taille];
+        this.positionsY = new int[taille];
+        this.touches = new boolean[taille];
+    }
+
+    public void placerNavire(int startX, int startY, boolean horizontal) {
+        this.horizontal = horizontal;
+        for (int i = 0; i < taille; i++) {
+            if (horizontal) {
+                positionsX[i] = startX + i;
+                positionsY[i] = startY;
+            } else {
+                positionsX[i] = startX;
+                positionsY[i] = startY + i;
+            }
+        }
+    }
+
+    public boolean estTouche(int x, int y) {
+        for (int i = 0; i < taille; i++) {
+            if (positionsX[i] == x && positionsY[i] == y) {
+                touches[i] = true;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean estCoule() {
+        for (boolean touche : touches) {
+            if (!touche) return false;
+        }
+        return true;
+    }
+
+    public boolean occupePosition(int x, int y) {
+        for (int i = 0; i < taille; i++) {
+            if (positionsX[i] == x && positionsY[i] == y) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Getters
+    public String getNom() { return nom; }
+    public int getTaille() { return taille; }
+    public int[] getPositionsX() { return positionsX; }
+    public int[] getPositionsY() { return positionsY; }
+}`},
+    { id: 10, title: "Kotlin", image: "/images/competences/kotlin.png", progress: 15,
+        codeExample: `fun afficherTable(vins: List<Vin>) {
+    if (vins.isEmpty()) { println("(aucun vin)"); return }
+    val header = listOf("ID", "Nom", "Année", "Région", "Stock", "Prix")
+    val rows = vins.map { v ->
+        listOf(
+            v.id.toString(), v.nom, v.annee.toString(), v.region, v.stock.toString(),
+            if (v.prix != null) "%.2f".format(v.prix) else ""
+        )
+    }
+    val cols = (header.indices).map { i ->
+        maxOf(header[i].length, *(rows.map { it[i].length }.toTypedArray()))
+    }
+    fun line(parts: List<String>) {
+        val txt = parts.mapIndexed { i, s -> s.padEnd(cols[i], ' ') }.joinToString("  ")
+        println(txt)
+    }
+    line(header)
+    println(cols.joinToString("  ") { "-".repeat(it) })
+    rows.forEach { line(it) }
+}`},
 ];
