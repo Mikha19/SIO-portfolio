@@ -4,13 +4,11 @@ import { useState, useEffect } from 'react';
 const subtitleText = "Bienvenue sur mon site";
 const nameText = "Je m'appelle Alexandre Mikhael";
 const instructionText = "Pour continuer, cliquez sur la barre à gauche de l'écran !";
-const arrowText = "< -";
 
 export default function Home() {
     const [displayedSubtitle, setDisplayedSubtitle] = useState('');
     const [displayedName, setDisplayedName] = useState('');
     const [displayedInstruction, setDisplayedInstruction] = useState('');
-    const [displayedArrow, setDisplayedArrow] = useState('');
 
     useEffect(() => {
         let i = 0;
@@ -51,20 +49,6 @@ export default function Home() {
         }
     }, [displayedName]);
 
-    useEffect(() => {
-        if (displayedInstruction === instructionText) {
-            let l = 0;
-            const arrowTimeout = setTimeout(() => {
-                const arrowInterval = setInterval(() => {
-                    setDisplayedArrow(arrowText.slice(0, l + 1));
-                    l++;
-                    if (l === arrowText.length) clearInterval(arrowInterval);
-                }, 150);
-            }, 600);
-            return () => clearTimeout(arrowTimeout);
-        }
-    }, [displayedInstruction]);
-
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-white">
             <h1 className="text-2xl md:text-4xl lg:text-6xl font-extrabold text-center relative mb-6">
@@ -92,14 +76,6 @@ export default function Home() {
                     {displayedInstruction}
                     <span className="animate-pulse text-red-600">
                         {displayedName === nameText && displayedInstruction.length < instructionText.length ? '|' : ''}
-                    </span>
-                </span>
-            </div>
-            <div className="text-2xl md:text-4xl text-gray-900 font-bold mt-6 h-10">
-                <span>
-                    {displayedArrow}
-                    <span className="animate-pulse text-red-600">
-                        {displayedInstruction === instructionText && displayedArrow.length < arrowText.length ? '|' : ''}
                     </span>
                 </span>
             </div>
