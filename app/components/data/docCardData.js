@@ -12,9 +12,9 @@ export const pdfInfo = [
             thumbnailUrl: "/images/pdf-preview-e5.png"
         },
         {
-            title: "Fiche E6",
+            title: "Fiche E6 n°1",
             description: "Fiches projets",
-            pdfUrl: "/files/E6.pdf",
+            pdfUrl: "/files/E6.1.pdf",
             thumbnailUrl: "/images/pdf-preview-e6.png"
         }
     ];
