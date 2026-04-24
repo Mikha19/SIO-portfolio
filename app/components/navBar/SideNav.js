@@ -1,15 +1,23 @@
-import Image from 'next/image';
 import NavLinks from './Links';
 
 export default function SideNav() {
   return (
-    <nav className="flex flex-col p-2">
-        <div className="bg-red-600 p-4 mb-2 flex h-40 w-52 justify-center items-center rounded-md " href="/">
-            <Image src="/images/logo.svg" alt="Logo" width={100} height={100}/>
+    <>
+      <nav className="md:hidden sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div className="overflow-x-auto">
+          <div className="flex gap-2 px-2 py-2">
+            <NavLinks horizontal />
+          </div>
         </div>
-        <div className="flex flex-col grow justify-between space-x-0 space-y-2">
-            <NavLinks />
+      </nav>
+
+      {/* Desktop / Tablet: vertical sidebar, links area scrollable, socials pinned to bottom */}
+      <nav className="hidden md:flex flex-col p-2 h-full w-56">
+        {/* Scrollable links area */}
+        <div className="flex flex-col overflow-auto space-y-2">
+          <NavLinks />
         </div>
-    </nav>
+      </nav>
+    </>
   );
 }

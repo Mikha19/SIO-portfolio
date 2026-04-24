@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 
 const subtitleText = "Bienvenue sur mon site";
 const nameText = "Je m'appelle Alexandre Mikhael";
+const instructionText = "Pour continuer, cliquez sur la barre à gauche de l'écran !";
 
 export default function Home() {
     const [displayedSubtitle, setDisplayedSubtitle] = useState('');
     const [displayedName, setDisplayedName] = useState('');
+    const [displayedInstruction, setDisplayedInstruction] = useState('');
 
     useEffect(() => {
         let i = 0;
@@ -28,14 +30,28 @@ export default function Home() {
                     j++;
                     if (j === nameText.length) clearInterval(nameInterval);
                 }, 40);
-            }, 1000); // 1s delay after subtitle finishes
+            }, 1000);
             return () => clearTimeout(nameTimeout);
         }
     }, [displayedSubtitle]);
 
+    useEffect(() => {
+        if (displayedName === nameText) {
+            let k = 0;
+            const instructionTimeout = setTimeout(() => {
+                const instructionInterval = setInterval(() => {
+                    setDisplayedInstruction(instructionText.slice(0, k + 1));
+                    k++;
+                    if (k === instructionText.length) clearInterval(instructionInterval);
+                }, 30);
+            }, 800);
+            return () => clearTimeout(instructionTimeout);
+        }
+    }, [displayedName]);
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-white">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-center relative mb-6">
+            <h1 className="text-2xl md:text-4xl lg:text-6xl font-extrabold text-center relative mb-6">
                 <span className="relative z-10">
                     {displayedSubtitle}
                     <span
@@ -47,11 +63,19 @@ export default function Home() {
                     </span>
                 </span>
             </h1>
-            <div className="text-xl md:text-2xl text-gray-700 h-8">
+            <div className="text-lg md:text-2xl text-gray-700 h-8">
                 <span>
                     {displayedName}
                     <span className="animate-pulse text-red-600">
                         {displayedSubtitle === subtitleText && displayedName.length < nameText.length ? '|' : ''}
+                    </span>
+                </span>
+            </div>
+            <div className="text-lg md:text-2xl text-gray-700 mt-8 h-6 text-center">
+                <span>
+                    {displayedInstruction}
+                    <span className="animate-pulse text-red-600">
+                        {displayedName === nameText && displayedInstruction.length < instructionText.length ? '|' : ''}
                     </span>
                 </span>
             </div>

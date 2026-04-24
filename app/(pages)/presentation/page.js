@@ -22,9 +22,9 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-white p-8">
-            <div className="max-w-6xl mx-auto mt-16 space-y-8">
-                {/* Présentations */}
-                <div className="flex flex-col gap-8">
+            <div className="max-w-6xl mx-auto mt-16">
+                {/* Présentations - vertically stacked */}
+                <div className="flex flex-col gap-8 max-w-3xl mx-auto">
                     {[0, 1, 2].map((idx, i) => (
                         <motion.div
                             key={presentations[idx].title}
@@ -32,6 +32,7 @@ export default function Home() {
                             initial="hidden"
                             animate="visible"
                             variants={cardVariants}
+                           className="w-full"
                         >
                             <Card card={presentations[idx]} onClick={() => setSelectedCard(presentations[idx])} />
                         </motion.div>
@@ -54,7 +55,19 @@ export default function Home() {
                                     className={`${selectedCard.imageClass} rounded-full object-cover`}
                                 />
                             </div>
-                            <h2 className="text-3xl p-8 font-bold">{selectedCard.title}</h2>
+                            <div className="flex items-center gap-4">
+                                <h2 className="text-3xl p-8 font-bold">{selectedCard.title}</h2>
+                                {selectedCard.link && (
+                                    <a
+                                        href={selectedCard.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-600 hover:text-blue-800 underline decoration-2 font-medium transition-colors"
+                                    >
+                                        {selectedCard.link}
+                                    </a>
+                                )}
+                            </div>
                         </div>
 
                         {/* Red divider */}

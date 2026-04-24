@@ -1,5 +1,5 @@
 export const competences = [
-    { id: 1, title: "HTML", image: "/images/competences/html.png", progress: 75,
+    { id: 1, title: "HTML", image: "/images/competences/html.png", progress: 50,
         codeExample: `//Code HTML pour l'affichage du code
 <div className="w-full rounded-lg overflow-hidden">
     <div className="flex items-center justify-between px-4 py-2 bg-gray-800">
@@ -15,7 +15,7 @@ export const competences = [
     </pre>
 </div>`
     },
-    { id: 2, title: "CSS", image: "/images/competences/css.png", progress: 90,
+    { id: 2, title: "CSS", image: "/images/competences/css.png", progress: 70,
         codeExample: `/*Code CSS pour les bordures et un fond noir broullié */
 .rounded-md {
   border-radius: 0.375rem;
@@ -33,7 +33,7 @@ export const competences = [
 .bg-black\/50 {
   background-color: rgb(0 0 0 / 0.5);
 }`},
-    { id: 3, title: "JavaScript", image: "/images/competences/javascript.png", progress: 90,
+    { id: 3, title: "JavaScript", image: "/images/competences/javascript.png", progress: 60,
         codeExample: `const tableViewBtn = document.getElementById('table-view-btn');
     const kanbanViewBtn = document.getElementById('kanban-view-btn');
     const tableView = document.getElementById('table-view');
@@ -68,7 +68,7 @@ export const competences = [
     } else {
         console.error('One or more view toggle elements not found');
     }`},
-    { id: 4, title: "Node.JS", image: "/images/competences/nodejs.png", progress: 95,
+    { id: 4, title: "Node.JS", image: "/images/competences/nodejs.png", progress: 70,
         codeExample: `// Création d'un serveur HTTP avec Node.js
 const http = require('http');
 
@@ -85,7 +85,7 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
     console.log("Serveur démarré sur http://localhost:3000");
 });`},
-    { id: 5, title: "PHP", image: "/images/competences/php.png", progress: 55,
+    { id: 5, title: "PHP", image: "/images/competences/php.png", progress: 30,
         codeExample: `<?php
 // Configuration de la base de données
 $host = 'localhost';
@@ -106,7 +106,7 @@ try {
     $erreur = "Erreur de connexion : " . $e->getMessage();
 }
 ?>`},
-    { id: 6, title: "MySQL", image: "/images/competences/mysql.png", progress: 75,
+    { id: 6, title: "MySQL", image: "/images/competences/mysql.png", progress: 70,
         codeExample: `-- Création de la base de données
 CREATE DATABASE collectus;
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS demandes (
 INSERT INTO encombrants (nom, prenom, telephone, email, adresse_postale, type_encombrant, consentement_rgpd) VALUES
 ('Dupont', 'Marie', '01.23.45.67.89', 'marie.dupont@email.com', '123 Rue de la Paix, 75001 Paris', 'Électroménager', '1'),
 ('Durand', 'Sophie', '01.11.22.33.44', 'sophie.durand@email.com', '789 Boulevard Saint-Germain, 75006 Paris', 'Cartons', '0');`},
-    { id: 7, title: "Python", image: "/images/competences/python.png", progress: 75,
+    { id: 7, title: "Python", image: "/images/competences/python.png", progress: 55,
         codeExample: `def get_user_enterprise_tasks(user):
     """
     Retourne les tâches associées à l'entreprise ou ESN de l'utilisateur.
@@ -147,7 +147,7 @@ INSERT INTO encombrants (nom, prenom, telephone, email, adresse_postale, type_en
         return Task.objects.filter(assigned_to=user_profile)
     else:
         return Task.objects.none()`},
-    { id: 8, title: "C#", image: "/images/competences/csharp.jpg", progress: 25,
+    { id: 8, title: "C#", image: "/images/competences/csharp.jpg", progress: 30,
         codeExample: `private void SaveWaypoints()
     {
         //Sauvegarder l'état des balises
@@ -163,4 +163,87 @@ INSERT INTO encombrants (nom, prenom, telephone, email, adresse_postale, type_en
 
         SaveManager.Instance.SetHasActiveWaypoints(true);
     }`},
+    { id: 9, title: "Java", image: "/images/competences/java.png", progress: 25,
+        codeExample: `class Navire {
+    private String nom;
+    private int taille;
+    private int[] positionsX;
+    private int[] positionsY;
+    private boolean[] touches;
+    private boolean horizontal;
+
+    public Navire(String nom, int taille) {
+        this.nom = nom;
+        this.taille = taille;
+        this.positionsX = new int[taille];
+        this.positionsY = new int[taille];
+        this.touches = new boolean[taille];
+    }
+
+    public void placerNavire(int startX, int startY, boolean horizontal) {
+        this.horizontal = horizontal;
+        for (int i = 0; i < taille; i++) {
+            if (horizontal) {
+                positionsX[i] = startX + i;
+                positionsY[i] = startY;
+            } else {
+                positionsX[i] = startX;
+                positionsY[i] = startY + i;
+            }
+        }
+    }
+
+    public boolean estTouche(int x, int y) {
+        for (int i = 0; i < taille; i++) {
+            if (positionsX[i] == x && positionsY[i] == y) {
+                touches[i] = true;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean estCoule() {
+        for (boolean touche : touches) {
+            if (!touche) return false;
+        }
+        return true;
+    }
+
+    public boolean occupePosition(int x, int y) {
+        for (int i = 0; i < taille; i++) {
+            if (positionsX[i] == x && positionsY[i] == y) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Getters
+    public String getNom() { return nom; }
+    public int getTaille() { return taille; }
+    public int[] getPositionsX() { return positionsX; }
+    public int[] getPositionsY() { return positionsY; }
+}`},
+    { id: 10, title: "Kotlin", image: "/images/competences/kotlin.png", progress: 15,
+        codeExample: `fun afficherTable(vins: List<Vin>) {
+    if (vins.isEmpty()) { println("(aucun vin)"); return }
+    val header = listOf("ID", "Nom", "Année", "Région", "Stock", "Prix")
+    val rows = vins.map { v ->
+        listOf(
+            v.id.toString(), v.nom, v.annee.toString(), v.region, v.stock.toString(),
+            if (v.prix != null) "%.2f".format(v.prix) else ""
+        )
+    }
+    val cols = (header.indices).map { i ->
+        maxOf(header[i].length, *(rows.map { it[i].length }.toTypedArray()))
+    }
+    fun line(parts: List<String>) {
+        val txt = parts.mapIndexed { i, s -> s.padEnd(cols[i], ' ') }.joinToString("  ")
+        println(txt)
+    }
+    line(header)
+    println(cols.joinToString("  ") { "-".repeat(it) })
+    rows.forEach { line(it) }
+}`},
 ];

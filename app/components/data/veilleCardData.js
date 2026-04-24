@@ -1,5 +1,11 @@
 export const veilleItems = [
     {
+        title: "Next.js Blog",
+        description: "Actualités, guides et nouveautés officielles autour du framework Next.js.",
+        image: "/images/veille/v6.png",
+        source: "https://nextjs.org/blog",
+    },
+    {
         title: "CSS-Tricks",
         description: "Astuces, tutoriels et actualités sur le CSS et le développement web.",
         image: "/images/veille/v1.png",
@@ -28,11 +34,5 @@ export const veilleItems = [
         description: "Tutoriels, articles et exercices pour apprendre le développement web.",
         image: "/images/veille/v5.png",
         source: "https://www.freecodecamp.org/news/",
-    },
-    {
-        title: "Next.js Blog",
-        description: "Actualités, guides et nouveautés officielles autour du framework Next.js.",
-        image: "/images/veille/v6.png",
-        source: "https://nextjs.org/blog",
     },
 ];

@@ -10,6 +10,7 @@ export default function Contact() {
         email: '',
         message: ''
     });
+    const [privacyConsent, setPrivacyConsent] = useState(false);
     const [status, setStatus] = useState('');
     const [displayedSecondSubtitle, setDisplayedSecondSubtitle] = useState('');
 
@@ -36,7 +37,7 @@ export default function Contact() {
                     j++;
                     if (j === subtitleText.length) clearInterval(subtitleInterval);
                 }, 30);
-            }, 600); // delay after title finishes
+            }, 600);
             return () => clearTimeout(subtitleTimeout);
         }
     }, [displayedTitle]);
@@ -51,7 +52,7 @@ export default function Contact() {
                     k++;
                     if (k === secondSubtitleText.length) clearInterval(secondSubtitleInterval);
                 }, 30);
-            }, 600); // delay after first subtitle finishes
+            }, 600);
             return () => clearTimeout(secondSubtitleTimeout);
         }
     }, [displayedSubtitle]);
@@ -156,11 +157,25 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                className="w-full bg-red-600 text-white py-3 px-6 rounded-md hover:bg-red-700 transition-colors"
-                                disabled={status === 'sending'}
+                                className="w-full bg-red-600 text-white py-3 px-6 rounded-md hover:bg-red-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                                disabled={status === 'sending' || !privacyConsent}
                             >
                                 {status === 'sending' ? 'Envoi en cours...' : 'Envoyer'}
                             </button>
+
+                            <div className="flex items-start space-x-3 mt-4">
+                                <input
+                                    type="checkbox"
+                                    id="privacy"
+                                    checked={privacyConsent}
+                                    onChange={(e) => setPrivacyConsent(e.target.checked)}
+                                    className="mt-1 cursor-pointer"
+                                    required
+                                />
+                                <label htmlFor="privacy" className="text-sm text-gray-600 cursor-pointer">
+                                    J'accepte que mes données personnelles soient utilisées pour traiter ma demande de contact.
+                                </label>
+                            </div>
 
                             {status === 'success' && (
                                 <p className="text-green-600 text-center">Message envoyé avec succès !</p>
