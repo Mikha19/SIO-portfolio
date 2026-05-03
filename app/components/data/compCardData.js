@@ -1,5 +1,5 @@
 export const competences = [
-    { id: 1, title: "HTML", image: "/images/competences/html.png", progress: 50,
+    { id: 1, title: "HTML", image: "/images/competences/html.png", progress: 60,
         codeExample: `//Code HTML pour l'affichage du code
 <div className="w-full rounded-lg overflow-hidden">
     <div className="flex items-center justify-between px-4 py-2 bg-gray-800">
@@ -85,7 +85,7 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
     console.log("Serveur démarré sur http://localhost:3000");
 });`},
-    { id: 5, title: "PHP", image: "/images/competences/php.png", progress: 30,
+    { id: 5, title: "PHP", image: "/images/competences/php.png", progress: 40,
         codeExample: `<?php
 // Configuration de la base de données
 $host = 'localhost';
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS demandes (
 INSERT INTO encombrants (nom, prenom, telephone, email, adresse_postale, type_encombrant, consentement_rgpd) VALUES
 ('Dupont', 'Marie', '01.23.45.67.89', 'marie.dupont@email.com', '123 Rue de la Paix, 75001 Paris', 'Électroménager', '1'),
 ('Durand', 'Sophie', '01.11.22.33.44', 'sophie.durand@email.com', '789 Boulevard Saint-Germain, 75006 Paris', 'Cartons', '0');`},
-    { id: 7, title: "Python", image: "/images/competences/python.png", progress: 55,
+    { id: 7, title: "Python", image: "/images/competences/python.png", progress: 60,
         codeExample: `def get_user_enterprise_tasks(user):
     """
     Retourne les tâches associées à l'entreprise ou ESN de l'utilisateur.
@@ -147,7 +147,7 @@ INSERT INTO encombrants (nom, prenom, telephone, email, adresse_postale, type_en
         return Task.objects.filter(assigned_to=user_profile)
     else:
         return Task.objects.none()`},
-    { id: 8, title: "C#", image: "/images/competences/csharp.jpg", progress: 30,
+    { id: 8, title: "C#", image: "/images/competences/csharp.jpg", progress: 40,
         codeExample: `private void SaveWaypoints()
     {
         //Sauvegarder l'état des balises
@@ -163,7 +163,7 @@ INSERT INTO encombrants (nom, prenom, telephone, email, adresse_postale, type_en
 
         SaveManager.Instance.SetHasActiveWaypoints(true);
     }`},
-    { id: 9, title: "Java", image: "/images/competences/java.png", progress: 25,
+    { id: 9, title: "Java", image: "/images/competences/java.png", progress: 30,
         codeExample: `class Navire {
     private String nom;
     private int taille;
@@ -225,7 +225,7 @@ INSERT INTO encombrants (nom, prenom, telephone, email, adresse_postale, type_en
     public int[] getPositionsX() { return positionsX; }
     public int[] getPositionsY() { return positionsY; }
 }`},
-    { id: 10, title: "Kotlin", image: "/images/competences/kotlin.png", progress: 15,
+    { id: 10, title: "Kotlin", image: "/images/competences/kotlin.png", progress: 25,
         codeExample: `fun afficherTable(vins: List<Vin>) {
     if (vins.isEmpty()) { println("(aucun vin)"); return }
     val header = listOf("ID", "Nom", "Année", "Région", "Stock", "Prix")
