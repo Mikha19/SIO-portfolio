@@ -36,4 +36,11 @@ export const projects = [
                  { title: "Visuel de la Base de Données", type: "image", value: "/images/projets/preuve/vm2.png" }
         ],
     },
+    {
+        id: 6,
+        title: "Déploiement de l'application Owlcub on premise",
+        description: "Déploiement de l'application Owlcub on premise pour permettre aux clients d'héberger l'application sur leurs propres serveurs.",
+        image: "/images/projets/on-premise.png",
+        proofs: [{ title: "Procédure de déploiement", type: "document", value: "/files/projets/owlcub-guide-on_premise.pdf" }],
+    }
 ];
